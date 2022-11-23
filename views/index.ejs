@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="cont">
+        <form action="convert-mp3" method="post" id="form">
+            <input type="text" name="videoId" placeholder="lien">
+            <button id="convert-btn">vconvertir</button>
+        </form>
+    </div>
+
+    <div class="countBott">
+        <% if(typeof success != "undefined" && success) { %>
+            <div class="success">
+                <p><%= song_title %></p>
+                <a href="<% song_link %>"><button id="download-btn">Tél</button></a>
+            </div>
+        <% } else if (typeof success != "undefined" && !success) { %>
+            <div class="errors">
+                <p><%= message %></p>
+            </div>    
+        <% } %>
+    </div>
+</body>
+</html>
